@@ -2,15 +2,22 @@
 
 Hobby firmware for Infineon **TLE9879-2QXA40** (MOTIX™, Cortex-M3, 3-phase motor + LIN).
 
-## Hello world (GCC + J-Link)
+## Build (PlatformIO + J-Link)
 
 ```bash
-brew install arm-none-eabi-gcc segger-jlink   # once
-make            # build build/hello_world.{elf,hex,bin}
-make flash      # Segger J-Link SWD — use device TLE9879-2QXA40 (not generic M3)
+make            # pio run -e hall   (hello-world blink — default ENV=hall)
+make ENV=spin   # pio run -e spin   (legacy open-loop six-step drive)
+make flash      # build + Segger J-Link SWD — device TLE9879-2QXA40 (not generic M3)
+make size       # flash/RAM usage for the current ENV
 ```
 
-`src/main.c` blinks EvalKit **P0.2** (LED2 via JP7) and keeps `g_hello` for the debugger. Always service WDT1 in the main loop.
+Sources live in `firmware/src/`, linker script in `firmware/ld/`, and PlatformIO
+envs are defined in `firmware/platformio.ini`. The build uses the local custom
+platform `tle987x` (`~/.platformio/platforms/tle987x`, bare GCC + J-Link, no
+framework). `hall`/`hold` envs are placeholders that build the safe blink until
+their phase sources land; only `spin` builds the motor code.
+
+`firmware/src/main.c` blinks EvalKit **P0.2** (LED2 via JP7) and keeps `g_hello` for the debugger. Always service WDT1 in the main loop.
 
 ## Optional Infineon SDK path
 

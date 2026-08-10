@@ -1,0 +1,12 @@
+ExitOnError 0
+halt
+w4 0xE000E010, 0x00000000
+w4 0xE000E180, 0xFFFFFFFF
+w4 0xE000E184, 0xFFFFFFFF
+w2 0x180017F0, 0xE7FE
+SetPC 0x180017F1
+halt
+sleep 200
+loadfile /Users/surya/Documents/bldc-control/bldc-control/firmware/.pio/build/hall/firmware.hex
+halt
+exit

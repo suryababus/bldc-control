@@ -1,9 +1,0 @@
-si SWD
-speed 4000
-device TLE9879-2QXA40
-connect
-halt
-loadfile build/hello_world.hex
-r
-g
-exit
