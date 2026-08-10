@@ -1,0 +1,28 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build hello_world",
+      "type": "shell",
+      "command": "make",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": ["$gcc"]
+    },
+    {
+      "label": "flash hello_world (J-Link)",
+      "type": "shell",
+      "command": "make flash",
+      "dependsOn": "build hello_world",
+      "problemMatcher": []
+    },
+    {
+      "label": "clean",
+      "type": "shell",
+      "command": "make clean",
+      "problemMatcher": []
+    }
+  ]
+}

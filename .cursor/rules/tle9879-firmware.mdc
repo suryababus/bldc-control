@@ -1,0 +1,26 @@
+---
+description: C/firmware conventions for TLE987x motor-drive code
+globs: "**/*.{c,h,s,S,asm,inc}"
+alwaysApply: false
+---
+
+# TLE987x firmware style
+
+- Language: C99 (Keil ARM Compiler 5/6 or project-selected toolchain).
+- Keep ISRs short; defer heavy work to main/loop or flags.
+- Init order: clocks/PMU → GPIO → peripherals → interrupts → motor enable last.
+- Use Config Wizard–generated `*_conf.h` / init where the project already does; do not hand-edit generated blocks without matching the wizard XML.
+- Prefer SDK helpers (`CCU6_*`, `BDRV_*`, `ADC*_*`, `LIN_*`) over magic numbers.
+- Guard motor enable behind fault clears (OC, UV, overtemp) when BDRV/CSA are used.
+- Avoid dynamic allocation; static/`const` in flash when possible.
+- Comment placeholders for board pin mux when eval-kit vs custom PCB differs.
+
+```c
+// ❌ BAD — enable bridge before faults/PWM are safe
+BDRV_Set_Bridge(Chrg_Pump_En, Bridge_On);
+
+// ✅ GOOD — PWM/dead-time + fault path ready, then enable
+CCU6_StartTmr_T12();
+/* clear latched faults, then */
+BDRV_Set_Bridge(Chrg_Pump_En, Bridge_On);
+```

@@ -1,0 +1,31 @@
+{
+  "configurations": [
+    {
+      "name": "TLE9879-2QXA40",
+      "includePath": [
+        "${workspaceFolder}/**",
+        "${workspaceFolder}/RTE/**",
+        "${workspaceFolder}/SDK/**",
+        "${env:KEIL_PACK_PATH}/Infineon/TLE987x_DFP/**",
+        "${env:CMSIS_PACK_ROOT}/Infineon/TLE987x_DFP/**"
+      ],
+      "defines": [
+        "TLE9879_2QXA40",
+        "TLE987x",
+        "__UVISION_VERSION=526"
+      ],
+      "cStandard": "c99",
+      "cppStandard": "c++11",
+      "intelliSenseMode": "gcc-arm",
+      "browse": {
+        "path": [
+          "${workspaceFolder}",
+          "${env:KEIL_PACK_PATH}/Infineon/TLE987x_DFP",
+          "${env:CMSIS_PACK_ROOT}/Infineon/TLE987x_DFP"
+        ],
+        "limitSymbolsToIncludedHeaders": true
+      }
+    }
+  ],
+  "version": 4
+}

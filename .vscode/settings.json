@@ -1,0 +1,44 @@
+{
+  "files.associations": {
+    "*.uvprojx": "xml",
+    "*.uvoptx": "xml",
+    "*.uvproj": "xml",
+    "*.sct": "plaintext",
+    "*.scvd": "xml",
+    "tle987x.h": "c",
+    "*.h": "c"
+  },
+  "files.exclude": {
+    "**/.git": true,
+    "**/Objects": true,
+    "**/Listings": true,
+    "**/*.o": true,
+    "**/*.d": true,
+    "**/*.crf": true,
+    "**/*.axf": true,
+    "**/*.lnp": true,
+    "**/*.build_log.htm": true
+  },
+  "search.exclude": {
+    "**/Objects": true,
+    "**/Listings": true,
+    "**/RTE/_*": true
+  },
+  "C_Cpp.default.cStandard": "c99",
+  "C_Cpp.default.intelliSenseMode": "gcc-arm",
+  "C_Cpp.default.compilerPath": "",
+  "C_Cpp.errorSquiggles": "enabled",
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.rulers": [100],
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "[c]": {
+    "editor.defaultFormatter": "ms-vscode.cpptools",
+    "editor.wordBasedSuggestions": "off"
+  },
+  "[cpp]": {
+    "editor.wordBasedSuggestions": "off"
+  },
+  "cortex-debug.variableUseNaturalFormat": true
+}

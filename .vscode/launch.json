@@ -1,0 +1,17 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "TLE9879-2QXA40 (J-Link SWD)",
+      "type": "cortex-debug",
+      "request": "launch",
+      "servertype": "jlink",
+      "cwd": "${workspaceFolder}",
+      "executable": "${workspaceFolder}/build/hello_world.elf",
+      "device": "TLE9879-2QXA40",
+      "interface": "swd",
+      "runToEntryPoint": "main",
+      "svdFile": "${env:CMSIS_PACK_ROOT}/Infineon/TLE987x_DFP/SVD/TLE9879_2/TLE987x.svd"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+---
+description: TLE9879-2QXA40 target, memory, and toolchain facts
+alwaysApply: true
+---
+
+# Target: Infineon TLE9879-2QXA40
+
+MOTIX™ Embedded Power IC for 3-phase BLDC/PMSM motor control.
+
+## Silicon
+
+- Core: ARM Cortex-M3 @ up to 40 MHz
+- Flash (IROM1): 124 KiB code; IROM2: 4 KiB (data/NVM per DFP layout)
+- RAM (IRAM1): 6 KiB; IRAM2: 20 B
+- Debug: SWD (Segger J-Link on eval kits)
+- Notable blocks: CCU6 (PWM), BDRV (3-phase gate driver), ADC1/ADC2, CSA, GPT12, Timer2/3, LIN, UART, SSC/SPI, DMA, PMU, WDT, NVIC
+
+## Toolchain (preferred)
+
+1. Keil µVision5 / MDK + pack **Infineon.TLE987x_DFP**
+2. **Config Wizard for MOTIX™ MCU** (Infineon Developer Center) for clock/peripheral XML → generated init
+3. Segger J-Link for flash/debug
+
+Device select in Pack Installer / new project: **TLE9879-2QXA40** (not older TLE9879QXA40 unless matching silicon).
+
+## Agent behavior
+
+- Prefer Infineon SDK / Config Wizard APIs over bare register hacks unless registers are required.
+- Respect 6 KiB RAM: no large buffers, heap, or printf stacks by default.
+- Motor/PWM/BDRV changes must consider dead-time, shoot-through, and overcurrent paths.
+- Do not invent pack paths or register names; use `tle987x.h` / SVD / SDK headers from the DFP when present.
