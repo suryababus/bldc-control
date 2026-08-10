@@ -1,0 +1,351 @@
+surya@Suryas-MacBook-Air bldc-control % make
+cd /Users/surya/Documents/bldc-control/bldc-control/firmware && /Users/surya/Library/Python/3.9/bin/pio run -e hall
+/Users/surya/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Processing hall (platform: tle987x; board: tle9879_2qxa40)
+-----------------------------------------------------------------------------------------------------------
+/Users/surya/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Verbose mode can be enabled via `-v, --verbose` option
+CONFIGURATION: https://docs.platformio.org/page/boards/tle987x/tle9879_2qxa40.html
+PLATFORM: Infineon TLE987x (MOTIX) (0.1.0) > Wiper BLDC Driver (TLE9879-2QXA40)
+HARDWARE: TLE9879_2QXA40 40MHz, 6KB RAM, 124KB Flash
+PACKAGES:
+ - toolchain-gccarmnoneeabi @ 1.120301.0 (12.3.1)
+LDF: Library Dependency Finder -> https://bit.ly/configure-pio-ldf
+LDF Modes: Finder ~ chain, Compatibility ~ soft
+Found 0 compatible libraries
+Scanning dependencies...
+No dependencies
+Building in release mode
+`.pio/build/hall/firmware.elf' is up to date.
+Checking size .pio/build/hall/firmware.elf
+Advanced Memory Usage is available via "PlatformIO Home > Project Inspect"
+RAM:   [          ]   0.3% (used 16 bytes from 6144 bytes)
+Flash: [          ]   0.3% (used 360 bytes from 126976 bytes)
+======================================= [SUCCESS] Took 0.23 seconds =======================================
+
+Environment    Status    Duration
+-------------  --------  ------------
+hall           SUCCESS   00:00:00.230
+======================================= 1 succeeded in 00:00:00.230 =======================================
+surya@Suryas-MacBook-Air bldc-control % make flash
+cd /Users/surya/Documents/bldc-control/bldc-control/firmware && /Users/surya/Library/Python/3.9/bin/pio run -e hall
+/Users/surya/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Processing hall (platform: tle987x; board: tle9879_2qxa40)
+-----------------------------------------------------------------------------------------------------------
+/Users/surya/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Verbose mode can be enabled via `-v, --verbose` option
+CONFIGURATION: https://docs.platformio.org/page/boards/tle987x/tle9879_2qxa40.html
+PLATFORM: Infineon TLE987x (MOTIX) (0.1.0) > Wiper BLDC Driver (TLE9879-2QXA40)
+HARDWARE: TLE9879_2QXA40 40MHz, 6KB RAM, 124KB Flash
+PACKAGES:
+ - toolchain-gccarmnoneeabi @ 1.120301.0 (12.3.1)
+LDF: Library Dependency Finder -> https://bit.ly/configure-pio-ldf
+LDF Modes: Finder ~ chain, Compatibility ~ soft
+Found 0 compatible libraries
+Scanning dependencies...
+No dependencies
+Building in release mode
+`.pio/build/hall/firmware.elf' is up to date.
+Checking size .pio/build/hall/firmware.elf
+Advanced Memory Usage is available via "PlatformIO Home > Project Inspect"
+RAM:   [          ]   0.3% (used 16 bytes from 6144 bytes)
+Flash: [          ]   0.3% (used 360 bytes from 126976 bytes)
+======================================= [SUCCESS] Took 0.22 seconds =======================================
+
+Environment    Status    Duration
+-------------  --------  ------------
+hall           SUCCESS   00:00:00.220
+======================================= 1 succeeded in 00:00:00.220 =======================================
+flash attempt 1...
+flash OK
+SEGGER J-Link Commander V9.66 (Compiled Aug  5 2026 12:20:09)
+DLL version V9.66, compiled Aug  5 2026 12:19:06
+
+
+J-Link Command File read successfully.
+Processing script file...
+J-Link>si SWD
+J-Link connection not established yet but required for command.
+Connecting to J-Link ...O.K.
+Firmware: J-Link V11 compiled Apr  1 2025 10:02:30
+Hardware version: V11.00
+J-Link uptime (since boot): 0d 00h 50m 30s
+S/N: 51023559
+License(s): GDB
+USB speed mode: High speed (480 MBit/s)
+VTref=4.864V
+Selecting SWD as current target interface.
+J-Link>speed 400
+Selecting 400 kHz as target interface speed
+J-Link>device TLE9879-2QXA40
+J-Link>connect
+Device "TLE9879" selected.
+
+
+Connecting to target via SWD
+InitTarget() start
+InitTarget() end - Took 53.8ms
+Found SW-DP with ID 0x2BA01477
+DPIDR: 0x2BA01477
+CoreSight SoC-400 or earlier
+Scanning AP map to find all available APs
+AP[1]: Stopped AP scan as end of AP map has been reached
+AP[0]: AHB-AP (IDR: 0x24770011, ADDR: 0x00000000)
+Iterating through AP map to find AHB-AP to use
+AP[0]: Core found
+AP[0]: AHB-AP ROM base: 0xE00FF000
+CPUID register: 0x412FC231. Implementer code: 0x41 (ARM)
+Found Cortex-M3 r2p1, Little endian.
+FPUnit: 2 code (BP) slots and 0 literal slots
+CoreSight components:
+ROMTbl[0] @ E00FF000
+[0][0]: E000E000 CID B105E00D PID 000BB000 SCS
+[0][1]: E0001000 CID B105E00D PID 003BB002 DWT
+[0][2]: E0002000 CID B105E00D PID 002BB003 FPB
+Memory zones:
+  Zone: "Default" Description: Default access mode
+Cortex-M3 identified.
+J-Link>halt
+PC = 110000E8, CycleCnt = 00000000
+R0 = 18000018, R1 = 18000028, R2 = 18000000, R3 = 00000400
+R4 = 00000000, R5 = 110000E5, R6 = 180003FF, R7 = 00000000
+R8 = 00000000, R9 = 00000000, R10= 00000000, R11= 00000000
+R12= 00000000
+SP(R13)= 18001800, MSP= 18001800, PSP= 00000000, R14(LR) = 00000000
+XPSR = 61000000: APSR = nZCvq, EPSR = 01000000, IPSR = 000 (NoException)
+CFBP = 00000000, CONTROL = 00, FAULTMASK = 00, BASEPRI = 00, PRIMASK = 00
+FPU regs: FPU not enabled / not implemented on connected CPU.
+J-Link>exit
+
+Script processing completed.
+
+start_main: main() at 0x11000080
+start_main: core halted (set MOTORDRIVE_RUN=1 to stop at main)
+surya@Suryas-MacBook-Air bldc-control % make
+cd /Users/surya/Documents/bldc-control/bldc-control/firmware && /Users/surya/Library/Python/3.9/bin/pio run -e hall
+/Users/surya/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Processing hall (platform: tle987x; board: tle9879_2qxa40)
+-----------------------------------------------------------------------------------------------------------
+/Users/surya/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Verbose mode can be enabled via `-v, --verbose` option
+CONFIGURATION: https://docs.platformio.org/page/boards/tle987x/tle9879_2qxa40.html
+PLATFORM: Infineon TLE987x (MOTIX) (0.1.0) > Wiper BLDC Driver (TLE9879-2QXA40)
+HARDWARE: TLE9879_2QXA40 40MHz, 6KB RAM, 124KB Flash
+PACKAGES:
+ - toolchain-gccarmnoneeabi @ 1.120301.0 (12.3.1)
+LDF: Library Dependency Finder -> https://bit.ly/configure-pio-ldf
+LDF Modes: Finder ~ chain, Compatibility ~ soft
+Found 0 compatible libraries
+Scanning dependencies...
+No dependencies
+Building in release mode
+`.pio/build/hall/firmware.elf' is up to date.
+Checking size .pio/build/hall/firmware.elf
+Advanced Memory Usage is available via "PlatformIO Home > Project Inspect"
+RAM:   [          ]   0.3% (used 16 bytes from 6144 bytes)
+Flash: [          ]   0.3% (used 360 bytes from 126976 bytes)
+======================================= [SUCCESS] Took 0.24 seconds =======================================
+
+Environment    Status    Duration
+-------------  --------  ------------
+hall           SUCCESS   00:00:00.238
+======================================= 1 succeeded in 00:00:00.238 =======================================
+surya@Suryas-MacBook-Air bldc-control % make flash
+cd /Users/surya/Documents/bldc-control/bldc-control/firmware && /Users/surya/Library/Python/3.9/bin/pio run -e hall
+/Users/surya/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Processing hall (platform: tle987x; board: tle9879_2qxa40)
+-----------------------------------------------------------------------------------------------------------
+/Users/surya/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Verbose mode can be enabled via `-v, --verbose` option
+CONFIGURATION: https://docs.platformio.org/page/boards/tle987x/tle9879_2qxa40.html
+PLATFORM: Infineon TLE987x (MOTIX) (0.1.0) > Wiper BLDC Driver (TLE9879-2QXA40)
+HARDWARE: TLE9879_2QXA40 40MHz, 6KB RAM, 124KB Flash
+PACKAGES:
+ - toolchain-gccarmnoneeabi @ 1.120301.0 (12.3.1)
+LDF: Library Dependency Finder -> https://bit.ly/configure-pio-ldf
+LDF Modes: Finder ~ chain, Compatibility ~ soft
+Found 0 compatible libraries
+Scanning dependencies...
+No dependencies
+Building in release mode
+`.pio/build/hall/firmware.elf' is up to date.
+Checking size .pio/build/hall/firmware.elf
+Advanced Memory Usage is available via "PlatformIO Home > Project Inspect"
+RAM:   [          ]   0.3% (used 16 bytes from 6144 bytes)
+Flash: [          ]   0.3% (used 360 bytes from 126976 bytes)
+======================================= [SUCCESS] Took 0.20 seconds =======================================
+
+Environment    Status    Duration
+-------------  --------  ------------
+hall           SUCCESS   00:00:00.197
+======================================= 1 succeeded in 00:00:00.197 =======================================
+flash attempt 1...
+flash OK
+SEGGER J-Link Commander V9.66 (Compiled Aug  5 2026 12:20:09)
+DLL version V9.66, compiled Aug  5 2026 12:19:06
+
+
+J-Link Command File read successfully.
+Processing script file...
+J-Link>si SWD
+J-Link connection not established yet but required for command.
+Connecting to J-Link ...O.K.
+Firmware: J-Link V11 compiled Apr  1 2025 10:02:30
+Hardware version: V11.00
+J-Link uptime (since boot): 0d 01h 11m 07s
+S/N: 51023559
+License(s): GDB
+USB speed mode: High speed (480 MBit/s)
+VTref=4.867V
+Selecting SWD as current target interface.
+J-Link>speed 400
+Selecting 400 kHz as target interface speed
+J-Link>device TLE9879-2QXA40
+J-Link>connect
+Device "TLE9879" selected.
+
+
+Connecting to target via SWD
+InitTarget() start
+InitTarget() end - Took 54.5ms
+Found SW-DP with ID 0x2BA01477
+DPIDR: 0x2BA01477
+CoreSight SoC-400 or earlier
+Scanning AP map to find all available APs
+AP[1]: Stopped AP scan as end of AP map has been reached
+AP[0]: AHB-AP (IDR: 0x24770011, ADDR: 0x00000000)
+Iterating through AP map to find AHB-AP to use
+AP[0]: Core found
+AP[0]: AHB-AP ROM base: 0xE00FF000
+CPUID register: 0x412FC231. Implementer code: 0x41 (ARM)
+Found Cortex-M3 r2p1, Little endian.
+FPUnit: 2 code (BP) slots and 0 literal slots
+CoreSight components:
+ROMTbl[0] @ E00FF000
+[0][0]: E000E000 CID B105E00D PID 000BB000 SCS
+[0][1]: E0001000 CID B105E00D PID 003BB002 DWT
+[0][2]: E0002000 CID B105E00D PID 002BB003 FPB
+Memory zones:
+  Zone: "Default" Description: Default access mode
+Cortex-M3 identified.
+J-Link>halt
+PC = 110000E8, CycleCnt = 00000000
+R0 = 18000018, R1 = 18000028, R2 = 18000000, R3 = 00000400
+R4 = 00000000, R5 = 110000E5, R6 = 180003FF, R7 = 00000000
+R8 = 00000000, R9 = 00000000, R10= 00000000, R11= 00000000
+R12= 00000000
+SP(R13)= 18001800, MSP= 18001800, PSP= 00000000, R14(LR) = 00000000
+XPSR = 61000000: APSR = nZCvq, EPSR = 01000000, IPSR = 000 (NoException)
+CFBP = 00000000, CONTROL = 00, FAULTMASK = 00, BASEPRI = 00, PRIMASK = 00
+FPU regs: FPU not enabled / not implemented on connected CPU.
+J-Link>exit
+
+Script processing completed.
+
+start_main: main() at 0x11000080
+start_main: core halted (set MOTORDRIVE_RUN=1 to stop at main)
+surya@Suryas-MacBook-Air bldc-control % make flash
+cd /Users/surya/Documents/bldc-control/bldc-control/firmware && /Users/surya/Library/Python/3.9/bin/pio run -e hall
+/Users/surya/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Processing hall (platform: tle987x; board: tle9879_2qxa40)
+-----------------------------------------------------------------------------------------------------------
+/Users/surya/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Verbose mode can be enabled via `-v, --verbose` option
+CONFIGURATION: https://docs.platformio.org/page/boards/tle987x/tle9879_2qxa40.html
+PLATFORM: Infineon TLE987x (MOTIX) (0.1.0) > Wiper BLDC Driver (TLE9879-2QXA40)
+HARDWARE: TLE9879_2QXA40 40MHz, 6KB RAM, 124KB Flash
+PACKAGES:
+ - toolchain-gccarmnoneeabi @ 1.120301.0 (12.3.1)
+LDF: Library Dependency Finder -> https://bit.ly/configure-pio-ldf
+LDF Modes: Finder ~ chain, Compatibility ~ soft
+Found 0 compatible libraries
+Scanning dependencies...
+No dependencies
+Building in release mode
+`.pio/build/hall/firmware.elf' is up to date.
+Checking size .pio/build/hall/firmware.elf
+Advanced Memory Usage is available via "PlatformIO Home > Project Inspect"
+RAM:   [          ]   0.3% (used 16 bytes from 6144 bytes)
+Flash: [          ]   0.3% (used 360 bytes from 126976 bytes)
+======================================= [SUCCESS] Took 0.23 seconds =======================================
+
+Environment    Status    Duration
+-------------  --------  ------------
+hall           SUCCESS   00:00:00.230
+======================================= 1 succeeded in 00:00:00.230 =======================================
+flash attempt 1...
+flash OK
+SEGGER J-Link Commander V9.66 (Compiled Aug  5 2026 12:20:09)
+DLL version V9.66, compiled Aug  5 2026 12:19:06
+
+
+J-Link Command File read successfully.
+Processing script file...
+J-Link>si SWD
+J-Link connection not established yet but required for command.
+Connecting to J-Link ...O.K.
+Firmware: J-Link V11 compiled Apr  1 2025 10:02:30
+Hardware version: V11.00
+J-Link uptime (since boot): 0d 01h 12m 10s
+S/N: 51023559
+License(s): GDB
+USB speed mode: High speed (480 MBit/s)
+VTref=4.864V
+Selecting SWD as current target interface.
+J-Link>speed 400
+Selecting 400 kHz as target interface speed
+J-Link>device TLE9879-2QXA40
+J-Link>connect
+Device "TLE9879" selected.
+
+
+Connecting to target via SWD
+InitTarget() start
+InitTarget() end - Took 54.0ms
+Found SW-DP with ID 0x2BA01477
+DPIDR: 0x2BA01477
+CoreSight SoC-400 or earlier
+Scanning AP map to find all available APs
+AP[1]: Stopped AP scan as end of AP map has been reached
+AP[0]: AHB-AP (IDR: 0x24770011, ADDR: 0x00000000)
+Iterating through AP map to find AHB-AP to use
+AP[0]: Core found
+AP[0]: AHB-AP ROM base: 0xE00FF000
+CPUID register: 0x412FC231. Implementer code: 0x41 (ARM)
+Found Cortex-M3 r2p1, Little endian.
+FPUnit: 2 code (BP) slots and 0 literal slots
+CoreSight components:
+ROMTbl[0] @ E00FF000
+[0][0]: E000E000 CID B105E00D PID 000BB000 SCS
+[0][1]: E0001000 CID B105E00D PID 003BB002 DWT
+[0][2]: E0002000 CID B105E00D PID 002BB003 FPB
+Memory zones:
+  Zone: "Default" Description: Default access mode
+Cortex-M3 identified.
+J-Link>halt
+PC = 110000E8, CycleCnt = 00000000
+R0 = 18000018, R1 = 18000028, R2 = 18000000, R3 = 00000400
+R4 = 00000000, R5 = 110000E5, R6 = 180003FF, R7 = 00000000
+R8 = 00000000, R9 = 00000000, R10= 00000000, R11= 00000000
+R12= 00000000
+SP(R13)= 18001800, MSP= 18001800, PSP= 00000000, R14(LR) = 00000000
+XPSR = 61000000: APSR = nZCvq, EPSR = 01000000, IPSR = 000 (NoException)
+CFBP = 00000000, CONTROL = 00, FAULTMASK = 00, BASEPRI = 00, PRIMASK = 00
+FPU regs: FPU not enabled / not implemented on connected CPU.
+J-Link>exit
+
+Script processing completed.
+
+start_main: main() at 0x11000080
+start_main: core halted (set MOTORDRIVE_RUN=1 to stop at main)
+surya@Suryas-MacBook-Air bldc-control %
